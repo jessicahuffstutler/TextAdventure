@@ -10,12 +10,13 @@ public class Game {
         System.out.println("Welcome to my text adventure.");
         player = new Player(); //calling the static field player
 
-        while (true) { //when you play through the whole game, it restarts it at the beginning until you enter /exit
-            player.chooseName(); //call those three methods from Player class
-            player.chooseWeapon(); //call those three methods from Player class
-            player.chooseArea(); //call those three methods from Player class
-            player.findItem("Shield");
-        }
+        player.chooseName(); //call those three methods from Player class
+        player.chooseWeapon(); //call those three methods from Player class
+        player.chooseArea(); //call those three methods from Player class
+        player.findItem("Shield");
+
+        Enemy ogre = new Enemy("Ogre", 50, 5);
+        player.battle(ogre);
     }
 
     static String nextLine() { //new method, like a utility function, not public bc we will not call this from the JREPL and needs to be static so it can be called anytime.

@@ -3,16 +3,20 @@ import java.util.ArrayList;
 /**
  * Created by jessicahuffstutler on 10/9/15.
  */
-public class Player {
-    String name;
+public class Player extends Character {
     String weapon;
     String area;
-    ArrayList items = new ArrayList(); //had to import ArrayList by using option, enter
+    ArrayList items = new ArrayList();
 
-    void chooseName(){ //Merric, when do we use curly braces and when to use semi colon?
+    public Player() { //constructor
+        health = 100; //set health
+        damage = 20; //set damage
+    }
+
+    void chooseName() {
         System.out.println("What is your name, traveler?");
         name = Game.nextLine(); //replaced two lines with this so that we do not have to continuously call on the scanner; we also did this below
-        System.out.println("Good luck, " + name);
+        System.out.println(String.format("Good luck, %s", name)); //using updated string printing sytax
     }
 
     void chooseWeapon() throws Exception { //method
@@ -47,7 +51,7 @@ public class Player {
         System.out.println("Found item! Pick it up? [y/n]");
         String s = Game.nextLine(); //WHY ARE WE USING THIS HERE?
         if (s.equals("y")) {
-            System.out.println("You found a " + item);
+            System.out.println(String.format("You found a %s", item)); //using updated string format syntex
             items.add(item);
         }
     }
