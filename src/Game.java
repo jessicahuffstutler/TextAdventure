@@ -15,8 +15,12 @@ public class Game {
         player.chooseArea(); //call those three methods from Player class
         player.findItem("Shield");
 
-        Enemy ogre = new Enemy("Ogre", 50, 5);
-        player.battle(ogre);
+        Weapon ogreWeapon = new Weapon();
+        ogreWeapon.name = "Club";
+        ogreWeapon.damage = 5;
+        Enemy ogre = new Enemy("Ogre", 50, 5, ogreWeapon);
+
+        player.battle(ogre); //pass enemy into the battle method
     }
 
     static String nextLine() { //new method, like a utility function, not public bc we will not call this from the JREPL and needs to be static so it can be called anytime.
