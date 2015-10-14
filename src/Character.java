@@ -18,11 +18,27 @@ public class Character {
         String deadMessage = "%s has been killed!";
 
         if (health <= 0) {
-            System.out.println(String.format(deadMessage, name)); //if i set name to jess, this will say "jess has been killed!"
+            System.out.println(String.format(deadMessage, name)); //if i set name to jess during the game, this will say "jess has been killed!"
         }
 
         if (opponent.health <= 0) {
             System.out.println(String.format(deadMessage, opponent.name));
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
     }
 }
