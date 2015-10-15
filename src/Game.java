@@ -11,6 +11,7 @@ import java.util.Scanner;
  */
 public class Game {
     static Player player; //Static field, diff than static method, storing in global object
+    static final String FILE_NAME = "save.json";
 
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to my text adventure.");
@@ -58,7 +59,7 @@ public class Game {
     }
 
     static void saveGame() { //method: save game
-        File f = new File("save.json"); //json library wants you to set getters for anything you want to save
+        File f = new File(FILE_NAME); //json library wants you to set getters for anything you want to save
         JsonSerializer serializer = new JsonSerializer();
         String contentToSave = serializer.serialize(player);//serialize the player
 
@@ -73,7 +74,7 @@ public class Game {
 
     static Player loadGame() {
         try {
-            File f = new File("save.json");
+            File f = new File(FILE_NAME);
             FileReader fr = new FileReader(f);
             int fileSize = (int) f.length(); //how big is the file?, we are casting it to and int by using (int) in the line since it wants to be a "long" which is double the size of an int
             char[] contents = new char[fileSize];
