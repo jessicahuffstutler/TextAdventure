@@ -22,8 +22,10 @@ public class Game {
             player.chooseName(); //call those three methods from Player class
             player.chooseWeapon(); //call those three methods from Player class
             player.chooseArea(); //call those three methods from Player class
-            player.findItem("Shield");
         }
+
+        player.findItem("Shield");
+        player.findItem("Boots");
 
         Weapon ogreWeapon = new Weapon();
         ogreWeapon.name = "Club";
@@ -48,7 +50,7 @@ public class Game {
                 if (player.items.size() == 0) {
                     System.out.println("You have no items.");
                 }
-                for (Object item : player.items) { //declare a variable that represents that particular item in parenthesis
+                for (String item : player.items) { //declare a variable that represents that particular item in parenthesis
                     System.out.println(item); //technically, you could put this in an else clause
                 }
             }

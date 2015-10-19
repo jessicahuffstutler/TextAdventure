@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class Player extends Character {
     String area;
-    ArrayList items = new ArrayList();
+    ArrayList<String> items = new ArrayList(); //could also be ArrayList items = new ArrayList();
 
     public Player() { //constructor
         health = 100; //set health
